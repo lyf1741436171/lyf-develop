@@ -19,13 +19,21 @@
     </parent>
 
     <properties>
+        <!-- 1.4 maven仓库 -->
+        <cn.cloudlink.core.version>1.0.3-SNAPSHOT</cn.cloudlink.core.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>Finchley.RC2</spring-cloud.version>
     </properties>
 
-    <dependencies>
+   <dependencies>
+       <!--4.1 数据操作jar包 -->
+       <dependency>
+           <groupId>cn.cloudlink.core</groupId>
+           <artifactId>cloudlink-core-dataaccess</artifactId>
+           <version>${cn.cloudlink.core.version}</version>
+       </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -45,6 +53,16 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+       <!--4.8 添加mysql依赖jar包 -->
+       <dependency>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-jdbc</artifactId>
+           <optional>true</optional>
+       </dependency>
+       <dependency>
+           <groupId>mysql</groupId>
+           <artifactId>mysql-connector-java</artifactId>
+       </dependency>
     </dependencies>
 
     <dependencyManagement>
